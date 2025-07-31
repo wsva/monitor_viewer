@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <title>导航页面</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel='stylesheet' type='text/css' href='/css/site.css' />
+  </head>
+  
+  <body>
+    
+    <div id="table-of-contents">
+      <h2>目录</h2>
+      <div id="text-table-of-contents">
+	<ul>
+	  <li><a href="#sec-latest ">最新监控信息</a></li>
+	  <li><a href="#sec-history ">历史监控信息</a></li>
+    <li><a href="#sec-query ">日志文件查询</a></li>
+	</ul>
+      </div>
+    </div>
+    
+    <h1 id="sec-latest">最新监控信息</h1>
+    <p>
+      <a href="/current">普通</a>&emsp;
+      <a href="/current?type=warning">告警</a>&emsp;
+      <a href="/current?type=detail">明细</a>&emsp;
+      <a href="/current?type=simple">精简</a>&emsp;
+      <a href="/current?type=simplest">极简</a>&emsp;
+    </p>
+    
+    <h1 id="sec-history">历史监控信息</h1>
+    <p>查看某个时间点的监控信息</p>
+    <p>__ReplaceWithSchemaHost__/history?logfile=20210101_000000.json</p>
+    <p>查看某个时间段的监控信息</p>
+    <p>__ReplaceWithSchemaHost__/history?start=20210101_000000&end=20210102_080000</p>
+    <p>查看匹配某个时间点附近的监控信息</p>
+    <p>__ReplaceWithSchemaHost__/history?near=20210101_0000</p>
+
+    <h1 id="sec-query">日志文件查询</h1>
+    <p>查询某个时间点附近的监控信息日志文件</p>
+    <p>__ReplaceWithSchemaHost__/querylogfile?near=20210101_0000</p>
+    
+  </body>
+  
+</html>

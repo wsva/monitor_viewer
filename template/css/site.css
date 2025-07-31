@@ -1,0 +1,152 @@
+body { 
+    background-color: rgb(204,232,207);
+    font-size: 14pt;
+    line-height: 1.2;
+    margin: 1em 0.5em 1em 1.5em;/*上边距、右边距、下边距、左边距*/
+    padding: 0;
+    word-wrap: break-word;/*允许单词内断行*/
+    word-break: break-all;/*允许单词内断行*/
+}
+
+h1{
+    color: rgb(39,0,174);
+    font-size:100%;
+    left: 1em;
+    margin: 0.5em 0em 0em 0em;/*上边距、右边距、下边距、左边距*/
+}
+
+a{
+    text-decoration: none;
+} 
+
+/*段落缩进*/
+p{ 
+    text-indent: 2em; /*em是相对单位，2em即现在一个字大小的两倍*/
+    margin:0px;/*段落间距*/
+    
+}
+
+timestamp{
+    color:#A8A8A8;
+}
+
+pre {
+    white-space:pre-wrap;/*css-3*/ 
+    white-space:-moz-pre-wrap;/*Mozilla,since1999*/ 
+    white-space:-pre-wrap;/*Opera4-6*/ 
+    white-space:-o-pre-wrap;/*Opera7*/ 
+    word-wrap:break-word;/*InternetExplorer5.5+*/
+    margin:0px;
+}
+
+textarea[type=resource] {
+    border: 3px solid #888;
+    box-shadow: 0px 0px 0px #eee;
+    background-color: rgb(200,200,200);
+    font-family: Serif, Georgia, Arial;
+    font-size: 14pt;
+    overflow: auto;
+    margin: 0px 0px 0px 0px;
+    width: 98%;
+    height: 100px;
+    white-space:pre-wrap;/*css-3*/ 
+    white-space:-moz-pre-wrap;/*Mozilla,since1999*/ 
+    white-space:-pre-wrap;/*Opera4-6*/ 
+    white-space:-o-pre-wrap;/*Opera7*/ 
+    word-wrap:break-word;/*InternetExplorer5.5+*/
+}
+
+button[type=resource] {
+    background-color: rgb(200,200,200);
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+button[type=login] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+    padding: 16px;
+    margin:0px auto;
+}
+
+#table-of-contents {
+    position: fixed;
+    right: 0em;
+    top: 0em;
+    background: rgb(204,232,207);
+    -webkit-box-shadow: 0 0 1em #777777;
+    -moz-box-shadow: 0 0 1em #777777;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    text-align: left;
+    /* ensure doesn't flow off the screen when expanded */
+    max-height: 80%;
+    z-index: 200;
+}
+
+#table-of-contents h1 {
+    font-size: 14pt;
+    color:#000000;
+    font-weight: bold;
+    margin: 0.3em 0em 0.3em 2em;/*上边距、右边距、下边距、左边距*/
+}
+
+#table-of-contents ul {
+    margin-left: 8pt; 
+    margin-bottom: 10pt;
+    padding: 0
+}
+
+#table-of-contents li {
+    font-size: 14pt;
+    padding: 0;
+    margin: 1px;
+    list-style: none;
+}
+
+#table-of-contents ul>:first-child {
+    color: blue;
+}
+
+#table-of-contents #text-table-of-contents {
+    display: none;
+    text-align: left;
+}
+
+#table-of-contents:hover #text-table-of-contents {
+    display: block;
+    padding: 0.5em;
+    margin-top: -1.5em; 
+}
+
+@media screen
+{
+  #table-of-contents {
+    float: right;
+    border: 1px solid #CCC;
+    /*min-width: 80%;*/
+    max-width: 70%;
+    /*width: 70%;*/
+    overflow: auto;
+  }
+}

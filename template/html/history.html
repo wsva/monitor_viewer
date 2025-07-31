@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <title>历史监控信息</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel='stylesheet' type='text/css' href='/css/site.css' />
+  </head>
+  
+  <body>
+    
+    <div id="table-of-contents">
+      <h2>目录</h2>
+      <div id="text-table-of-contents">
+	<ul>
+	  __ReplaceWithTOC__
+	</ul>
+      </div>
+    </div>
+    
+    <a id="href_normal" href="">普通</a>&emsp;
+    <a id="href_warning" href="">告警</a>&emsp;
+    <a id="href_detail" href="">明细</a>&emsp;
+    <a id="href_simple" href="">精简</a>&emsp;
+    <a id="href_simplest" href="">极简</a>&emsp;
+    <script>
+      let loc = window.location;
+      let reg = new RegExp("(^|&)(logfile=[^&]*)(&|$)");
+      let matchList = loc.search.substr(1).match(reg);
+      if(matchList != null) {
+        let baseurl = loc.protocol+"//"+loc.host+loc.pathname+"?"+matchList[2]+"&type=";
+        console.log(baseurl);
+        document.getElementById("href_normal").setAttribute("href", baseurl+"normal");
+        document.getElementById("href_warning").setAttribute("href", baseurl+"warning");
+        document.getElementById("href_detail").setAttribute("href", baseurl+"detail");
+        document.getElementById("href_simple").setAttribute("href", baseurl+"simple");
+        document.getElementById("href_simplest").setAttribute("href", baseurl+"simplest");
+      }
+    </script>
+    
+    __ReplaceWithSection__
+    
+  </body>
+  
+</html>
