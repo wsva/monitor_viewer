@@ -1,6 +1,5 @@
 {
   "ListenPort": 2222,
-  "Language": "zh_CN",
   "DirectoryLog": "logs",
   "FilterList": [{ "Name": "^涓����蒋_" }]
 }

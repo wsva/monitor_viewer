@@ -20,20 +20,19 @@ const (
 	ViewTypeDetail   = "detail"
 )
 
-// MainConfig comment
 type MainConfig struct {
 	Port         string              `json:"Port"`
-	Language     string              `json:"Language"`
 	DirectoryLog string              `json:"DirectoryLog"`
 	FilterList   []mlib.FilterRegexp `json:"FilterList"`
 }
 
 var (
-	MainConfigFile = "viewer_config.json"
+	MainConfigFile        = "viewer_config.json"
+	MonitorTypeConfigFile = "monitor_type.json"
 )
 
 var mainConfig MainConfig
-
+var mtypeConfig mlib.MTypeConfig
 var latestMessage []mlib.MR
 
 func initGlobals() error {
@@ -57,6 +56,11 @@ func initGlobals() error {
 		mainConfig.DirectoryLog = path.Join(basepath, mainConfig.DirectoryLog)
 	}
 	err = wl_fs.CheckDirectoryExistAndCreateIfNot(mainConfig.DirectoryLog)
+	if err != nil {
+		return err
+	}
+
+	err = mtypeConfig.LoadFromFile(MonitorTypeConfigFile)
 	if err != nil {
 		return err
 	}

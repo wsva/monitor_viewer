@@ -1,0 +1,34 @@
+[
+  {
+    "ID": "host",
+    "Name": "主机监控信息"
+  },
+  {
+    "ID": "linux_service",
+    "Name": "Linux Service监控信息"
+  },
+  {
+    "ID": "oracle",
+    "Name": "Oracle监控信息"
+  },
+  {
+    "ID": "oracle_ogg",
+    "Name": "OGG监控信息"
+  },
+  {
+    "ID": "oracle_rman",
+    "Name": "数据库RMAN备份"
+  },
+  {
+    "ID": "oracle_rman_remote",
+    "Name": "数据库RMAN备份"
+  },
+  {
+    "ID": "web_service_soap",
+    "Name": "Web Service监控信息"
+  },
+  {
+    "ID": "port",
+    "Name": "端口连通性监控"
+  }
+]

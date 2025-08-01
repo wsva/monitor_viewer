@@ -63,17 +63,17 @@ func getMRListHTML(viewType string, mrList []mlib.MR) (string, string) {
 	regTimestamp := regexp.MustCompile(`__ReplaceWithTimestamp__`)
 	regContent := regexp.MustCompile(`__ReplaceWithContent__`)
 	regSection := regexp.MustCompile(`__ReplaceWithSection__`)
-	for _, k := range mlib.MTypeOrderList {
-		if _, exist := mrMap[k]; !exist {
+	for _, mt := range mtypeConfig.MTypeList {
+		if _, exist := mrMap[mt.ID]; !exist {
 			continue
 		}
-		toc := regSection.ReplaceAllString(TTOC, k)
-		toc = regName.ReplaceAllString(toc, mlib.GetMTypeName(k, mainConfig.Language))
+		toc := regSection.ReplaceAllString(TTOC, mt.ID)
+		toc = regName.ReplaceAllString(toc, mt.Name)
 		tocAll += toc
-		sectionH1 := regSection.ReplaceAllString(TSectionH1, k)
-		sectionH1 = regName.ReplaceAllString(sectionH1, mlib.GetMTypeName(k, mainConfig.Language))
+		sectionH1 := regSection.ReplaceAllString(TSectionH1, mt.ID)
+		sectionH1 = regName.ReplaceAllString(sectionH1, mt.Name)
 		var sectionContentAll string
-		for _, v := range mrMap[k] {
+		for _, v := range mrMap[mt.ID] {
 			warning := v.GetWarning()
 			var sectionContent string
 			switch viewType {
