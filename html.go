@@ -63,7 +63,7 @@ func getMRListHTML(viewType string, mrList []mlib.MR) (string, string) {
 	regTimestamp := regexp.MustCompile(`__ReplaceWithTimestamp__`)
 	regContent := regexp.MustCompile(`__ReplaceWithContent__`)
 	regSection := regexp.MustCompile(`__ReplaceWithSection__`)
-	for _, mt := range mtypeConfig.MTypeList {
+	for _, mt := range mtypeList {
 		if _, exist := mrMap[mt.ID]; !exist {
 			continue
 		}

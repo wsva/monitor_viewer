@@ -32,7 +32,7 @@ var (
 )
 
 var mainConfig MainConfig
-var mtypeConfig mlib.MTypeConfig
+var mtypeList []mlib.MType
 var latestMessage []mlib.MR
 
 func initGlobals() error {
@@ -60,7 +60,7 @@ func initGlobals() error {
 		return err
 	}
 
-	err = mtypeConfig.LoadFromFile(MonitorTypeConfigFile)
+	mtypeList, err = mlib.LoadMTypeListFromFile(MonitorTypeConfigFile)
 	if err != nil {
 		return err
 	}
